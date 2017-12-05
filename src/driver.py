@@ -1,11 +1,10 @@
-import train
+import segmentalKMeans import SegmentalKMeans
 
 def main ():
-    model = train.Train (5)
-    model.load_data("../data/day.csv")
-    # print(model.observation)
-    model.get_observation()
-    model.get_segments()
+    model = SegmentalKMeans ('../data/day.csv', 10, 5)
+
+    training_sequences = model.get_segments ()
+    print (training_sequences)
 
 if __name__ == "__main__":
     main()
